@@ -2,6 +2,7 @@
   --general-bg-color: #fff;
   --general-font-color: #757575;
   --custom-bg-dark-color: #2f303a;
+  --custom-bg-dark-transparent-color: #2f303a66;
   --custom-bg-light-color: #f5f4fa;
   --custom-black: #212121;
   --accentuation-color: #2196f3;
@@ -28,7 +29,7 @@ main img {
 }
 
 /* * {
-  outline: 2px solid #f00;
+  outline: 1px solid magenta;
 } */
 
 /* PARTICULAR AND SHARED RULES */
@@ -191,13 +192,17 @@ ul {
 /* SECTION HERO */
 
 .hero {
-  text-align: center;
+  max-width: 1600px;
+  margin: 0 auto;
   padding-top: 200px;
   padding-bottom: 200px;
 
-  background-image: url(../img/hero-banner-compressed.jpg),
-                    linear-gradient(90deg, var(--custom-bg-dark-color), var(--custom-bg-dark-color));
+  background-image: linear-gradient(90deg, var(--custom-bg-dark-transparent-color), var(--custom-bg-dark-transparent-color)),
+                    url(../img/hero-banner-compressed.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
+
+  text-align: center;
   color: var(--general-bg-color);
 }
 
@@ -302,10 +307,12 @@ ul {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
             0px 1px 1px rgba(0, 0, 0, 0.14),
             0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-member-info {
-  padding: 30px;
+  padding: 30px 32px;
 }
 
 .team-member-name {
@@ -321,8 +328,7 @@ ul {
 }
 
 .team-member-socials-list {
-  justify-content: space-between;
-  align-items: center;
+  gap: 10px;
 }
 
 .team-social-link {
@@ -350,14 +356,19 @@ ul {
 /* CUSTOMERS */
 
 .customers-links-list {
-  justify-content: center;
   gap: 30px;
+}
+
+.customers-list-item {
+  flex: 0 0 170px;
 }
 
 .customer-link {
   display: block;
-  padding: 15px 30px;
-  border: solid 1px var(--svg-color);
+  width: 100%;
+  padding: 15px 0;
+
+  border: 1px solid var(--svg-color);
   border-radius: 4px;
 
   fill: var(--svg-color);
@@ -373,6 +384,8 @@ ul {
   display: block;
   width: 106px;
   height: 60px;
+
+  margin: auto;
 }
 
 /* FOOTER */
@@ -475,8 +488,12 @@ ul {
   gap: 30px;
 }
 
-.projects-list-item:hover,
-.projects-list-item:focus {
+.projects-item-link {
+  display: block;
+}
+
+.projects-item-link:hover,
+.projects-item-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
             0px 4px 4px rgba(0, 0, 0, 0.06),
             1px 4px 6px rgba(0, 0, 0, 0.16);
